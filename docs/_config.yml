@@ -1,0 +1,6 @@
+title: Ti–Mo Phase Sources Scraper
+description: A Python utility to query Scopus and Web of Science APIs for titanium-molybdenum phase research publications.
+theme: jekyll-theme-cayman
+show_downloads: true
+github:
+  repository_url: https://github.com/arcticoder/timo-phase-sources-scraper
