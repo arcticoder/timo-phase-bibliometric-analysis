@@ -1,98 +1,87 @@
-# Ti–Mo Phase Sources Scraper
+# Ti–Mo Phase Bibliometric Analysis
 
-A Python utility to search Scopus and Google Scholar for publications related to Ti-Mo phase diagrams, limited to 1930–2000, and tally source frequencies.
+Automated bibliometric analysis of Ti–Mo binary phase-diagram literature (1930–2000), retrieving metadata from Scopus & Web of Science and tallying source-title frequencies.
+
+---
+
+## 🔖 Topics
+
+`bibliometrics ti-mo-phase-diagram calphad python scopus web-of-science latex`
+
+---
 
 ## 🔍 Search Queries
 
-**Primary targets:**
-- "Ti–Mo phase diagram" / "Ti-Mo phase diagram"
-- "Ti–Mo solidus" / "Ti-Mo solidus"  
-- "Ti–Mo β-transus" / "Ti-Mo beta transus"
+**Primary**  
+- “Ti–Mo phase diagram”  
+- “Ti–Mo solidus”  
+- “Ti–Mo β-transus”  
 
-**Additional variations:**
-- "titanium molybdenum phase diagram"
-- "titanium molybdenum solidus"
-- "titanium molybdenum beta transus"
+**Variants**  
+- “titanium molybdenum phase diagram”  
+- “titanium molybdenum solidus”  
+- “titanium molybdenum beta transus”  
 
-**Time period:** 1930–2000 (targeting landmark early studies)
+**Years:** 1930–2000
 
-## 📊 Latest Results (May 27, 2025)
-
-**✅ Successfully completed Scopus search:**
-- **144 publications** found across **67 unique sources**
-- **Top source:** Metallurgical Transactions A (17 papers)
-- **Coverage:** International scope (US, German, Soviet/Russian, Japanese journals)
-
-**❌ Google Scholar:** Rate-limited (common with automated searches)
-
-## 🎯 Key Findings
-
-### Top 5 Most Cited Sources:
-1. **Metallurgical Transactions A** (17 papers)
-2. **Metallurgical and Materials Transactions A** (9 papers)
-3. **Journal of Alloys and Compounds** (7 papers)
-4. **Zeitschrift fuer Metallkunde** (5 papers)
-5. **Soviet Powder Metallurgy and Metal Ceramics** (5 papers)
-
-### Landmark Papers Detected:
-- **1969 papers** (Rudy era): Phase equilibria in Mo-TiC-Ti system
-- **1981 paper** (Murray era): Critical evaluation in International Metals Reviews
-- **Murray's Bulletin of Alloy Phase Diagrams** appears in reference list
+---
 
 ## 📁 Generated Files
 
-- `source_counts.csv` - Frequency count of all 67 sources
-- `source_counts_detailed.csv` - Complete publication details (146 entries)
-- `timo_phase_analysis_summary.md` - Comprehensive analysis summary
-- `timo_phase_analysis.tex` - LaTeX document with results
+- `source_counts.csv`              – frequency tally of each journal/report  
+- `source_counts_detailed.csv`     – full metadata for all records  
+- `timo_phase_analysis_summary.md` – Markdown summary of results  
+- `timo_phase_bibliometric_analysis.tex` – LaTeX report with tables & figures  
+
+---
 
 ## 🛠️ Prerequisites
 
 - Python 3.7+  
-- Scopus API key (Elsevier)
-- WoS API key (Clarivate) - *optional*
-- Google Scholar access via `scholarly` library
+- Scopus API key (Elsevier)  
+- WoS API key (Clarivate)  
 
 ```bash
-pip install requests python-dotenv scholarly
+pip install pybliometrics requests python-dotenv
 ```
 
-## ⚙️ Setup
+---
 
-1. **Clone the repository:**
-```bash
-git clone <repository-url>
-cd timo-phase-sources-scraper
-```
+## ⚙️ Setup & Usage
 
-2. **Install dependencies:**
-```bash
-pip install -r requirements.txt
-```
+1. **Clone**  
+   ```bash
+   git clone https://github.com/arcticoder/timo-phase-bibliometric-analysis.git
+   cd timo-phase-bibliometric-analysis
+   ```
+2. **Configure**  
+   - Copy `.env.example → .env`  
+   - Add your keys:
+     ```ini
+     SCOPUS_API_KEY=your_scopus_key
+     WOS_API_KEY=your_wos_key
+     ```
+3. **Run**  
+   ```bash
+   python timo_phase_sources_scraper.py
+   ```
+4. **View Results**  
+   - Inspect `source_counts.csv`  
+   - Compile `timo_phase_bibliometric_analysis.tex` for a PDF report.
 
-3. **Create `.env` file:**
-```bash
-SCOPUS_API_KEY=your_scopus_api_key_here
-WOS_API_KEY=your_wos_api_key_here
-```
-
-4. **Run the scraper:**
-```bash
-python timo_phase_sources_scraper.py
-```
+---
 
 ## 🔬 Research Context
 
-This tool was developed to identify and quantify the most frequently cited publication sources for Ti-Mo phase diagram research, particularly targeting the foundational studies:
+Targets foundational Ti–Mo studies:
 
-- **Hansen, Kamen & Kessler (1951)** - First β-transus determination
-- **Rudy (1969)** - AFML technical report on solidus/liquidus
-- **Murray (1981)** - Critical review in Bulletin of Alloy Phase Diagrams
+- **Hansen, Kamen & Kessler (1951)** – β-transus in *Trans. AIME*  
+- **Rudy (1969)** – AFML-TR-62-2 solidus/liquidus data  
+- **Murray (1981)** – Bulletin of Alloy Phase Diagrams review  
+
+---
 
 ## 📖 Documentation
 
-Visit the [project documentation](https://your-username.github.io/timo-phase-sources-scraper/) for detailed analysis and results.
-
-## 📄 License
-
-MIT License - see LICENSE file for details.
+Project site:  
+https://arcticoder.github.io/timo-phase-bibliometric-analysis/
